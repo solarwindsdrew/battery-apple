@@ -7,26 +7,21 @@ import (
     "math/rand"
     "time"
     "strings"
-    // "strconv"
     "hash/fnv"
 )
 
 
 // Retrieves a list of words from a newline seperated file
 // Returns an array of single words
-// TODO: Parameterize word source
 func loadWordList(corpusFile string) []string {
-    // var corpusFile string = "corpus.txt"
 
-    // read the whole file at once
-    corpus, err := ioutil.ReadFile(corpusFile)
-    if err != nil {
-        panic(err)
-    }
+  corpus, err := ioutil.ReadFile(corpusFile)
+  if err != nil {
+      panic(err)
+  }
+  words := strings.Split(string(corpus), "\n")
 
-    words := strings.Split(string(corpus), "\n")
-
-    return words
+  return words
 }
 
 func randomWord(wordList []string, r *rand.Rand) string {
@@ -38,12 +33,15 @@ func randomWord(wordList []string, r *rand.Rand) string {
 
 // Uses magic to create a hash of a string
 func hash(s string) int64 {
-    h := fnv.New64a()
-    h.Write([]byte(s))
-    return int64(h.Sum64())
+
+  h := fnv.New64a()
+  h.Write([]byte(s))
+  return int64(h.Sum64())
 }
 
+// Creates the randomization source 
 func randSource(s string) rand.Source {
+
   if (s != "") {
   // if there's a seed flag, hash it, then use it
     seed := hash(s)
@@ -67,7 +65,6 @@ func main() {
   wordList := loadWordList(*corpusPtr)
 
   var s rand.Source = randSource(*seedPtr)
-   
   r := rand.New(s) // initialize local pseudorandom generator
 
   for i := 0; i < *pwdLengthPtr; i++ {
