@@ -1,10 +1,10 @@
 # Battery-Apple 
-A silly (xkcd style password generator)[https://xkcd.com/936/] in go.
+A silly [xkcd style password generator](https://xkcd.com/936/) in go.
 
 
 ## Build
 
-Install (go via the offical instructions)[https://golang.org/doc/install]
+Install [go via the offical instructions](https://golang.org/doc/install)
 
 Build:
 
