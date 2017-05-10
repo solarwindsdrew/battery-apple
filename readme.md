@@ -12,26 +12,23 @@ Build:
 
 ## Usage
 
+Generate a 4 word random password from the built in corpus:
 
+    ./battery-apple
 
-## Corpus how to recreate
+    -or-
 
-1) Copy & paste words from (this handy site)[http://www.paulnoll.com/Books/Clear-English/English-3000-common-words.html]. I did it manually, but I really should have used (this list)[https://github.com/first20hours/google-10000-english
-].
-2) Remove double spaces and leading tabs:
+    ./battery-apple \
+    -separator '-' \
+    -pwdLength 4 \
+    -corpus './corpus/corpus.txt'
 
-    sed "s/^[ \t]*//" -i corpus.txt
-    sed "/^$/d" -i corpus.txt
+Flags:
+* separator: character between words
+* pwdLength: Number of words
+* corpus: Newline delimited file of words
+* seed: Randomizer seed. This allows repeatable results. Use at your own risk.
 
-3) Remove the undesirable word (eg contractions, proper nouns). This may or may not have been a good idea.
-
-    sed "/'/d" -i corpus.txt
-    sed "/[A-Z]/d" -i corpus.txt
-
-4) Remove smaller words:
-
-    sed '/^\S\S$/d' -i corpus.txt
-    sed '/^\S\S\s$/d' -i corpus.txt
 
 
 ## Sources

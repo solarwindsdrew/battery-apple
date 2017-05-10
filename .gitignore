@@ -2,7 +2,7 @@
 battery-apple
 
 # local mostly unedited corpus
-corpus.txt.orig
+corpus/*
 
 
 # Go reccommended ignores from https://github.com/github/gitignore/blob/master/Go.gitignore
