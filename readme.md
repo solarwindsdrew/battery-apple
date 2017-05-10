@@ -33,7 +33,7 @@ Flags:
 
 ## Sources
 
-[XKCD password strength](https://xkcd.com/936/)
-[XKCD password generator by preshing](http://preshing.com/20110811/xkcd-password-generator/)
-[Go Lang command line flags](https://gobyexample.com/command-line-flags)
-[A Tour of Go: flow control](https://tour.golang.org/flowcontrol/1)
+* [XKCD password strength](https://xkcd.com/936/)
+* [XKCD password generator by preshing](http://preshing.com/20110811/xkcd-password-generator/)
+* [Go Lang command line flags](https://gobyexample.com/command-line-flags)
+* [A Tour of Go: flow control](https://tour.golang.org/flowcontrol/1)
